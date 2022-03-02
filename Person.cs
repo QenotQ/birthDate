@@ -17,7 +17,8 @@ namespace _28._02._22
             if (birthDate.Year < now.Year)
             {
                 age = now.Year - birthDate.Year;
-                if (birthDate.Month > now.Month & birthDate.Day < now.Day)
+                if (birthDate.Month > now.Month 
+                    || (DateTime.Now.Month == _birthDate.Month && DateTime.Now.Day < _birthDate.Day))
                 {
                     age--;
 
@@ -28,13 +29,14 @@ namespace _28._02._22
             else
             {
                 err = "Error";
-                age = 0;
+                age = -0;
                 Console.WriteLine(err);
+                
             }
             return age;
         }
 
-        // вариант 2
+        //вариант 2
         public int _age;
         public DateTime _birthDate;
         public int Age
@@ -42,7 +44,7 @@ namespace _28._02._22
             get
             {
                 _age = DateTime.Now.Year - _birthDate.Year;
-                if(DateTime.Now.Month < _birthDate.Month 
+                if (DateTime.Now.Month < _birthDate.Month
                     || (DateTime.Now.Month == _birthDate.Month && DateTime.Now.Day < _birthDate.Day))
                 {
                     _age--;
@@ -52,3 +54,5 @@ namespace _28._02._22
         }
     }
 }
+    
+
